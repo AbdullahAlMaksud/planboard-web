@@ -209,7 +209,7 @@ planboard/
 
 ### Deployment
 
-Bonton can be deployed to [Vercel](https://vercel.com/) or another hosting platform that supports Next.js.
+Planboard can be deployed to [Vercel](https://vercel.com/) or another hosting platform that supports Next.js.
 
 Before deploying, configure the environment variables required by your chosen storage integrations and ensure that the database and GitHub API settings are correct.
 
