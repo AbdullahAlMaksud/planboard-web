@@ -1,8 +1,6 @@
 # Planboard AI — AI-Powered Project Tracker & Infinite Whiteboard
 
-**Short Description:** A high-performance project tracker and visual whiteboard powered by Gemini AI, combining Kanban-style task management, vector drawing tools, sticky notes, Pomodoro focus sessions, and AI-assisted work reports in an interactive infinite-canvas workspace.
-
-**Technology Badges:**
+A high-performance project tracker and visual whiteboard powered by Gemini AI, combining Kanban-style task management, vector drawing tools, sticky notes, Pomodoro focus sessions, and AI-assisted work reports in an interactive infinite-canvas workspace.
 
 [![pnpm](https://img.shields.io/badge/pnpm-12.15.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-App_Router-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
@@ -10,7 +8,12 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Gemini AI](https://img.shields.io/badge/Gemini_AI-Powered-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
----
+<p align="center">
+  <img width="49%" alt="Photocard Studio screenshot 2" src="https://github.com/user-attachments/assets/670146da-12d7-4a0c-b30b-6bac9df65212" />
+  <img width="49%" alt="Photocard Studio screenshot 1" src="https://github.com/user-attachments/assets/9858c264-c483-48c3-9b49-1aecda5358cc" />
+</p>
+
+
 
 ## Table of Contents
 
@@ -27,12 +30,6 @@
   - [Canvas Navigation Controls](#canvas-navigation-controls)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Available Scripts](#available-scripts)
-  - [Project Structure](#project-structure)
-  - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -145,20 +142,21 @@ Make sure you have the following installed:
 Use your repository URL to clone the project:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/AbdullahAlMaksud/planboard-web.git
+cd planboard-web
 ```
 
-**2. Navigate to the project directory**
-
-```bash
-cd planboard
-```
-
-**3. Install dependencies**
+**2. Install dependencies**
 
 ```bash
 pnpm install
 ```
+
+**3. Configure environment variables (If Needed)**
+
+Create a `.env.local` file in the project root and configure the required variables using `.env.example` as your reference, if your local setup requires it.
+
+See [Environment Variables](#environment-variables) for details.
 
 **4. Start the development server**
 
@@ -166,7 +164,8 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser. If another port is selected, use the address shown in the terminal output.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 
 ### Environment Variables
 
@@ -210,21 +209,18 @@ planboard/
 
 ### Deployment
 
-Planboard AI can be deployed to a hosting platform that supports Next.js.
+Bonton can be deployed to [Vercel](https://vercel.com/) or another hosting platform that supports Next.js.
 
-**1. Create a production build**
+Before deploying, configure the environment variables required by your chosen storage integrations and ensure that the database and GitHub API settings are correct.
+
+To build and run the production application:
 
 ```bash
 pnpm build
-```
-
-**2. Start the production server**
-
-```bash
 pnpm start
 ```
 
-Configure the deployment environment according to the selected hosting platform. If AI-powered reporting requires Gemini credentials, configure them securely using the environment variable expected by the application.
+For platform-specific instructions, consult the [Next.js deployment documentation](https://nextjs.org/docs/app/getting-started/deploying).
 
 ## Contributing
 
@@ -255,7 +251,7 @@ For larger changes, consider opening an issue first to discuss the proposed impr
 
 ## License
 
-No license information was included in the provided project description. Add a `LICENSE` file and specify the intended license before distributing the project.
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for details.
 
 ## Contact
 
