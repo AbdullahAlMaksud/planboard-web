@@ -1,84 +1,267 @@
-# 🚀 Planboard AI
+# Planboard AI — AI-Powered Project Tracker & Infinite Whiteboard
 
-Planboard AI is a premium, high-performance project tracker and visual drawing whiteboard built on an infinite canvas, powered by Gemini AI. It combines structural task tracking (Kanban-style cards) with spatial drawing tools (whiteboard sketches, shape annotations, and sticky notes) and AI-assisted status reports to provide an intelligent, visually rich, and interactive workspace.
+**Short Description:** A high-performance project tracker and visual whiteboard powered by Gemini AI, combining Kanban-style task management, vector drawing tools, sticky notes, Pomodoro focus sessions, and AI-assisted work reports in an interactive infinite-canvas workspace.
 
----
+**Technology Badges:**
 
-## ✨ Features
-
-- **Infinite Canvas Board**: Smooth panning (middle-click or Space+drag), zoom controls (Ctrl+Scroll), and **Alt+Scroll Horizontal Panning** for fast lateral navigation across a high-resolution, responsive dot-grid backdrop.
-- **Interactive Project Cards**:
-  - Double-click to edit card title and description.
-  - Status tab filters (`All`, `Todo`, `Doing`, `Done`) with progress indicators.
-  - Add, reorder (drag-to-reorder), edit, and check off tasks.
-  - Date picking, priority tags, blockers tracker, and external links bookmarking.
-  - Collapse/Minimize cards to clear up clutter.
-- **Drawing Whiteboard (Vector Draw Layer)**:
-  - Vector pen drawing with custom strokes, opacity, and custom colors.
-  - Draw rectangles, ellipses, and flow arrows with customizable fills.
-  - Selected shapes (rectangles and ellipses) render draggable corner corner handles (`TL`, `TR`, `BL`, `BR`) for easy resizing.
-  - Smart connection arrows: Resizing shapes dynamically translates snapped arrow endpoints relative to their closest borders.
-  - Add text blocks and drag-and-drop color-coded **Sticky Notes**.
-  - Select, move, resize, and delete vector drawings on the canvas.
-- **Dynamic Pomodoro Focus Timer**: 
-  - Toggle-triggered floating card that persists ticking in the background.
-  - **Dynamic Island Collapsing**: Running timers morph from full size down to a sleek compact pill widget (`220px` x `56px`) showing time progress percentage and quick pause.
-  - **Tactile Audio Engine**: Plays minor tick/click sound feedback on user clicks and a pleasant major arpeggio completion chime (with quick Mute toggle).
-  - **Steppers Mode Adjustments**: Set custom durations for `Focus`, `Short Break`, and `Long Break` using custom +/- button steppers.
-- **Universal Parent Navigator**: Highly customizable, accessible, div-based navigation component with dynamic styling variants (`filled`, `outline`, `plain`), custom border separators, custom outline/fill SVG mapping, and dynamic sizing support.
-- **Today Focus Panel**: Pin up to 3 priority tasks from different cards to stay focused.
-- **Quick Inbox**: Capture ideas on the fly and transition them into cards when ready.
-- **AI-Powered Automated Work Reports**: Compile daily status updates of all active cards, auto-polish spelling/grammar, rewrite in 4 custom tones (Concise, Professional, Bullets, Executive) using Gemini AI, and batch-export/download files.
+[![pnpm](https://img.shields.io/badge/pnpm-12.15.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Next.js](https://img.shields.io/badge/Next.js-App_Router-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Type_Safe-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Gemini AI](https://img.shields.io/badge/Gemini_AI-Powered-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## Table of Contents
 
-- **Framework**: [Next.js](https://nextjs.org) (App Router, Turbopack)
-- **Runtime & Package Manager**: [Bun](https://bun.sh)
-- **Styling**: Vanilla CSS & TailwindCSS
-- **State & Storage**: Client-side reactive state synced automatically to `localStorage`
+- [About](#about)
+- [Features](#features)
+  - [Infinite Canvas Board](#infinite-canvas-board)
+  - [Interactive Project Cards](#interactive-project-cards)
+  - [Drawing Whiteboard](#drawing-whiteboard)
+  - [Pomodoro Focus Timer](#pomodoro-focus-timer)
+  - [Universal Parent Navigator](#universal-parent-navigator)
+  - [Today Focus Panel](#today-focus-panel)
+  - [Quick Inbox](#quick-inbox)
+  - [AI-Powered Work Reports](#ai-powered-work-reports)
+  - [Canvas Navigation Controls](#canvas-navigation-controls)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
+  - [Available Scripts](#available-scripts)
+  - [Project Structure](#project-structure)
+  - [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### Folder Structure
+## About
+
+Planboard AI is a visual project management and productivity workspace built around an interactive infinite canvas. It combines structured task tracking with freeform visual planning, allowing users to organize projects, sketch ideas, connect related concepts, and monitor their progress in one place.
+
+With interactive project cards, vector drawing tools, color-coded sticky notes, and a floating Pomodoro timer, Planboard AI brings task management and visual thinking together. Its Gemini-powered reporting tools also help turn ongoing project activity into polished daily status updates that are easier to review and share.
+
+## Features
+
+### Infinite Canvas Board
+
+- **Infinite Canvas:** Navigate a spacious, responsive dot-grid workspace designed for visual project planning.
+- **Smooth Panning:** Move around the canvas using middle-click or Space + drag.
+- **Zoom Controls:** Zoom in and out using Ctrl + Scroll.
+- **Horizontal Panning:** Navigate laterally using Alt + Scroll.
+- **Flexible Workspace:** Arrange project cards, drawings, annotations, and sticky notes across the canvas.
+
+### Interactive Project Cards
+
+- **Editable Project Cards:** Double-click a card to edit its title and description.
+- **Status-Based Filtering:** Filter cards using the `All`, `Todo`, `Doing`, and `Done` status tabs.
+- **Progress Indicators:** Monitor project status and task completion.
+- **Task Management:** Add, reorder, edit, and check off tasks using drag-and-drop interactions.
+- **Dates and Priorities:** Assign dates and priority tags to organize work.
+- **Blocker Tracking:** Keep track of issues that may prevent tasks from progressing.
+- **External Links:** Bookmark relevant links directly within project cards.
+- **Collapsible Cards:** Minimize cards to reduce clutter on the canvas.
+
+### Drawing Whiteboard
+
+- **Vector Pen:** Draw freeform sketches with customizable stroke colors, widths, and opacity.
+- **Shape Tools:** Draw rectangles, ellipses, and directional arrows with customizable fills.
+- **Interactive Resizing:** Resize selected rectangles and ellipses using draggable corner handles.
+- **Smart Connection Arrows:** Keep arrow endpoints aligned with shape borders as connected shapes are resized.
+- **Text Blocks:** Add text annotations directly to the canvas.
+- **Color-Coded Sticky Notes:** Create, move, and organize sticky notes using drag-and-drop interactions.
+- **Drawing Manipulation:** Select, move, resize, and delete vector drawings.
+
+### Pomodoro Focus Timer
+
+- **Floating Timer Card:** Open a floating timer that continues running in the background.
+- **Dynamic Island-Style Widget:** Collapse the running timer into a compact `220px × 56px` pill displaying time progress and quick pause controls.
+- **Audio Feedback:** Play subtle tick and click sounds during interactions, with a completion arpeggio when a session ends.
+- **Quick Mute:** Toggle sound feedback when needed.
+- **Customizable Durations:** Adjust Focus, Short Break, and Long Break intervals using increment and decrement controls.
+
+### Universal Parent Navigator
+
+- **Flexible Navigation:** Use a reusable navigation component designed for accessible, consistent navigation.
+- **Visual Variants:** Support `filled`, `outline`, and `plain` styling variants.
+- **Customizable Appearance:** Configure border separators, SVG outline and fill mappings, and dynamic sizing.
+
+### Today Focus Panel
+
+- **Priority Task Pinning:** Pin up to three priority tasks from different project cards.
+- **Focused Workflow:** Keep the most important tasks visible without having to navigate between multiple cards.
+
+### Quick Inbox
+
+- **Quick Idea Capture:** Record ideas and tasks as they come to mind.
+- **Task Promotion:** Move captured ideas into project cards when they are ready to be organized.
+
+### AI-Powered Work Reports
+
+- **Automated Daily Reports:** Compile daily status updates from active project cards.
+- **Spelling and Grammar Refinement:** Polish report text for clarity and readability.
+- **Multiple Writing Tones:** Rewrite reports in four styles:
+  - **Concise:** Short, direct status updates.
+  - **Professional:** Polished workplace communication.
+  - **Bullets:** Structured updates that are easy to scan.
+  - **Executive:** Summaries tailored to high-level progress reporting.
+- **Batch Export:** Export and download generated report files together.
+
+### Canvas Navigation Controls
+
+| Action | Control |
+| --- | --- |
+| Pan the canvas | Middle-click or Space + drag |
+| Zoom the canvas | Ctrl + Scroll |
+| Pan horizontally | Alt + Scroll |
+| Edit a project card | Double-click the card |
+
+## Tech Stack
+
+- **Package Manager:** [pnpm](https://pnpm.io/) v12.15.0 — Project dependency management.
+- **Framework:** [Next.js](https://nextjs.org/) — App Router and Turbopack.
+- **Runtime:** [Node.js](https://nodejs.org/) — JavaScript runtime for development and production.
+- **Styling:** [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) and [Tailwind CSS](https://tailwindcss.com/) — Custom styling and utility-based layouts.
+- **State Management & Storage:** Client-side reactive state synchronized with browser `localStorage`.
+- **AI Integration:** [Gemini AI](https://ai.google.dev/) — AI-assisted work report generation and text refinement.
+- **Architecture:** Feature-oriented modules separating drawing tools, project management, shared components, and utilities.
+- **Type Definitions:** TypeScript declaration files for shared application types.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js:** A version compatible with the Next.js version used by the project.
+- **pnpm:** Version `12.15.0`, as specified by the project.
+
+### Installation
+
+**1. Clone the repository**
+
+Use your repository URL to clone the project:
+
+```bash
+git clone <repository-url>
 ```
-planboard
-├── public/              # Static public assets
+
+**2. Navigate to the project directory**
+
+```bash
+cd planboard
+```
+
+**3. Install dependencies**
+
+```bash
+pnpm install
+```
+
+**4. Start the development server**
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser. If another port is selected, use the address shown in the terminal output.
+
+### Environment Variables
+
+Planboard AI uses Gemini AI to generate and refine work reports. The supplied project description does not specify the exact environment variable names or API credential setup.
+
+If the Gemini integration requires an API key:
+
+1. Check the application's configuration for the expected environment variable name.
+2. Add the required value to a local `.env.local` file if supported by the application.
+3. Keep API credentials private and never commit secrets to the repository.
+
+The core project workspace is described as using browser `localStorage` for client-side state persistence.
+
+### Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Start the Next.js development server. |
+| `pnpm build` | Create an optimized production build. |
+| `pnpm start` | Run the production build. |
+
+### Project Structure
+
+Planboard AI follows a feature-oriented project structure that separates the main application, reusable UI components, shared utilities, and core project-management and drawing features.
+
+```text
+planboard/
+├── public/                     # Static public assets
 └── src/
-    ├── app/             # Next.js App Router (pages and layouts)
+    ├── app/                    # Next.js App Router pages and layouts
     ├── components/
-    │   ├── ui/          # Low-level UI primitives (dialogs, buttons, select, etc.)
-    │   └── common/      # Shared layout components (navbar, footer)
+    │   ├── ui/                 # Reusable UI primitives
+    │   └── common/             # Shared layout components
     ├── shared/
-    │   ├── lib/         # Common libraries (storage, seed data, general utils)
-    │   └── types/       # Shared TypeScript declaration files
-    └── features/        # Core business domains
-        ├── draw/        # Whiteboard components, tools, draw layers, and sticky notes
-        └── project/     # Kanban board components, project cards, dialogs, and reports
+    │   ├── lib/                # Storage, seed data, and utilities
+    │   └── types/              # Shared TypeScript declarations
+    └── features/               # Core application features
+        ├── draw/                # Whiteboard tools and drawing components
+        └── project/             # Project cards, tasks, dialogs, and reports
 ```
 
----
+### Deployment
 
-## 🚀 Getting Started
+Planboard AI can be deployed to a hosting platform that supports Next.js.
 
-> [!IMPORTANT]
-> This project enforces the **Bun** package manager. Running `npm install`, `yarn`, or `pnpm` will be blocked by a preinstall hook.
+**1. Create a production build**
 
-### 1. Installation
-Install the project dependencies using Bun:
 ```bash
-bun install
+pnpm build
 ```
 
-### 2. Development Server
-Start the local Next.js hot-reloaded dev server:
-```bash
-bun run dev
-```
-Open [http://localhost:3000](http://localhost:3000) (or the port specified in terminal output) to load the canvas.
+**2. Start the production server**
 
-### 3. Production Build
-Compile the codebase into optimized production bundles:
 ```bash
-bun run build
-bun run start
+pnpm start
 ```
+
+Configure the deployment environment according to the selected hosting platform. If AI-powered reporting requires Gemini credentials, configure them securely using the environment variable expected by the application.
+
+## Contributing
+
+Contributions, bug reports, and feature suggestions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m "feat: add amazing feature"
+   ```
+
+4. Push the branch:
+
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+5. Open a pull request.
+
+For larger changes, consider opening an issue first to discuss the proposed improvements.
+
+## License
+
+No license information was included in the provided project description. Add a `LICENSE` file and specify the intended license before distributing the project.
+
+## Contact
+
+**Abdullah Al Maksud**
+
+- **Email:** [maksud.workspace@gmail.com](mailto:maksud.workspace@gmail.com)
+- **Website:** [abdullahalmaksud.com](https://abdullahalmaksud.com)
+- **LinkedIn:** [@AbdullahAlMaksud](https://linkedin.com/in/AbdullahAlMaksud)
+- **GitHub:** [@AbdullahAlMaksud](https://github.com/AbdullahAlMaksud)
